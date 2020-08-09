@@ -1,7 +1,7 @@
 {
   "name": "basic-project-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Filtering organizations from Github and members' pagination",
   "main": "index.js",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
