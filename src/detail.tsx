@@ -9,32 +9,6 @@ import { Typography } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 
-// Material UI ~ styles
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "100vh",
-    paddingTop: "100px",
-    maxWidth: 500,
-    fontFamily: "Roboto",
-    textAlign: "center",
-    table: {
-      minWidth: 500,
-    },
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  flexContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "10px",
-  },
-  highlightText: {
-    borderBottom: "1px solid #2BB686",
-  },
-}));
-
 const createDefaultMemberDetail = () => ({
   id: "",
   login: "",
@@ -58,22 +32,12 @@ export const DetailPage: React.FC = () => {
 
   return (
     <Container className={classes.root}>
-      <Typography
-        variant="h2"
-        style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}
-      >
+      <Typography variant="h2" className={classes.h2}>
         User detail
       </Typography>
       <div className={classes.flexContainer}>
-        <Avatar
-          src={member.avatar_url}
-          style={{
-            width: "6rem",
-            height: "6rem",
-            border: "0.1rem solid #525252",
-          }}
-        />
-        <div style={{ textAlign: "left", marginLeft: "30px" }}>
+        <Avatar src={member.avatar_url} className={classes.avatar} />
+        <div className={classes.infoContainer}>
           <Typography>
             {" "}
             ID: <span className={classes.highlightText}>{member.id}</span>
@@ -94,18 +58,60 @@ export const DetailPage: React.FC = () => {
           </Typography>
         </div>
       </div>
-      <Button
-        variant="contained"
-        style={{
-          backgroundColor: "#2BB686",
-          color: "white",
-          marginTop: "20px",
-        }}
-      >
-        <Link to="/list" style={{ textDecoration: "none", color: " white" }}>
+      <Link to="/list" className={classes.link}>
+        <Button variant="contained" className={classes.btn}>
           Back to list page
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </Container>
   );
 };
+
+// Material UI ~ styles
+const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100vh",
+    paddingTop: "100px",
+    maxWidth: 500,
+    fontFamily: "Roboto",
+    textAlign: "center",
+    table: {
+      minWidth: 500,
+    },
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+  flexContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "10px",
+  },
+  h2: {
+    fontSize: "40px",
+    marginBottom: "20px",
+    textAlign: "center",
+  },
+  avatar: {
+    width: "6rem",
+    height: "6rem",
+    border: "0.1rem solid #525252",
+  },
+  infoContainer: {
+    textAlign: "left",
+    marginLeft: "30px",
+  },
+  highlightText: {
+    borderBottom: "1px solid #2BB686",
+  },
+  btn: {
+    backgroundColor: "#2BB686",
+    color: "white",
+    marginTop: "20px",
+  },
+  link: {
+    textDecoration: "none",
+    color: " white",
+  },
+}));
