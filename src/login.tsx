@@ -14,7 +14,7 @@ export const LoginPage: React.FC = () => {
   const [password, setPassword] = React.useState<string>("");
   const classes = useStyles();
 
-  const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleNavigation = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     username === "admin" && password === "test"
       ? history.push("/list")

@@ -19,35 +19,6 @@ import { Typography } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-// Material UI ~ styles
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 500,
-    textAlign: "center",
-    table: {
-      minWidth: 500,
-    },
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-}));
-
-// Material UI ~ custom styles
-const theme = createMuiTheme({
-  overrides: {
-    MuiButton: {
-      text: {
-        background: "white",
-        border: "1px solid #ccc",
-        height: 40,
-        padding: "0 20px",
-      },
-    },
-  },
-});
-
-// ListPage component
 export const ListPage: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
   const [totalMembers, setTotalMembers] = React.useState<number>(0);
@@ -110,19 +81,12 @@ export const ListPage: React.FC = () => {
             {members.map((member) => (
               <TableRow key={member.id}>
                 <TableCell>
-                  <Avatar
-                    src={member.avatar_url}
-                    style={{
-                      width: "5rem",
-                      height: "5rem",
-                      border: "0.1rem solid #525252",
-                    }}
-                  />
+                  <Avatar src={member.avatar_url} className={classes.avatar} />
                 </TableCell>
                 <TableCell>{member.id}</TableCell>
                 <TableCell>
                   <Link
-                    style={{ textDecoration: "none", color: "#2BB686" }}
+                    className={classes.link}
                     to={generatePath("/detail/:id", { id: member.login })}
                   >
                     {member.login}
@@ -133,7 +97,7 @@ export const ListPage: React.FC = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Typography variant="body2" style={{ marginTop: "16px" }}>
+      <Typography variant="body2" className={classes.text}>
         <span>
           {`Items per page: ${resultsPerPage} | Page ${currentPage} of ${Math.ceil(
             totalMembers / resultsPerPage
@@ -163,3 +127,43 @@ export const ListPage: React.FC = () => {
     </Container>
   );
 };
+
+// Material UI ~ styles
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: 500,
+    textAlign: "center",
+    table: {
+      minWidth: 500,
+    },
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+  avatar: {
+    width: "5rem",
+    height: "5rem",
+    border: "0.1rem solid #525252",
+  },
+  link: {
+    textDecoration: "none",
+    color: "#2BB686",
+  },
+  text: {
+    marginTop: "16px",
+  },
+}));
+
+// Material UI ~ custom styles
+const theme = createMuiTheme({
+  overrides: {
+    MuiButton: {
+      text: {
+        background: "white",
+        border: "1px solid #ccc",
+        height: 40,
+        padding: "0 20px",
+      },
+    },
+  },
+});
