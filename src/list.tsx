@@ -159,10 +159,10 @@ const theme = createMuiTheme({
   overrides: {
     MuiButton: {
       text: {
-        background: "white",
-        border: "1px solid #ccc",
         height: 40,
         padding: "0 20px",
+        background: "white",
+        border: "1px solid #ccc",
       },
     },
   },

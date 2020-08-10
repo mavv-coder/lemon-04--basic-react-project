@@ -71,8 +71,8 @@ export const DetailPage: React.FC = () => {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
-    paddingTop: "100px",
     maxWidth: 500,
+    paddingTop: "100px",
     fontFamily: "Roboto",
     textAlign: "center",
     table: {
@@ -85,13 +85,13 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
     padding: "10px",
+    alignItems: "center",
   },
   h2: {
-    fontSize: "40px",
     marginBottom: "20px",
     textAlign: "center",
+    fontSize: "40px",
   },
   avatar: {
     width: "6rem",
@@ -99,16 +99,16 @@ const useStyles = makeStyles((theme) => ({
     border: "0.1rem solid #525252",
   },
   infoContainer: {
-    textAlign: "left",
     marginLeft: "30px",
+    textAlign: "left",
   },
   highlightText: {
     borderBottom: "1px solid #2BB686",
   },
   btn: {
-    backgroundColor: "#2BB686",
-    color: "white",
     marginTop: "20px",
+    color: "white",
+    backgroundColor: "#2BB686",
   },
   link: {
     textDecoration: "none",

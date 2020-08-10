@@ -70,23 +70,23 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   h2: {
-    fontSize: "40px",
     marginBottom: "20px",
+    fontSize: "40px",
   },
   label: {
-    fontSize: "18px",
     display: "inline-block",
     marginRight: "10px",
+    fontSize: "18px",
   },
   flexContainer: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
     padding: "10px",
+    alignItems: "center",
   },
   btn: {
-    backgroundColor: "#2BB686",
-    color: "white",
     marginTop: "20px",
+    color: "white",
+    backgroundColor: "#2BB686",
   },
 }));

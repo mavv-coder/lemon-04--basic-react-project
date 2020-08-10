@@ -8,13 +8,13 @@ export const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
+        <Route exact={true} path="/">
           <LoginPage />
         </Route>
-        <Route path="/list">
+        <Route exact={true} path="/list">
           <ListPage />
         </Route>
-        <Route path="/detail/:id">
+        <Route exact={true} path="/detail/:id">
           <DetailPage />
         </Route>
       </Switch>
